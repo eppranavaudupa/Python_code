@@ -143,7 +143,59 @@ def Automorpic_num(a):
         print("Number is Automorpic:",extract,"=",a)
     else:
         print("Not automorpic")
-Automorpic_num(a)
-
-
+# Automorpic_num(a)
+        ##12)Write a Program to check whether the number is Magic Number or Not
+magicNumber=1 
+def add(n):
+        sum=0
+        while n >0:
+            sum +=n%10
+            n=n//10
+        return sum
+def magic_Number(a):   
+    b=add(a)
+    print(b)
+    if(b>9 or b<9):
+        res=add(b)
+        if(res==magicNumber):
+            print(a,"It is a Magic Number")
+        else:
+            print("Not a Magic number") 
+    # else:
+    #     print("Not a Magic number")    
+# magic_Number(a)
+        #13)Write a program to check whether a given number is Friendly pair or not. (6,28) divisor of 6-->1+2+3+6=12    28-->1+2+4+7+14+28= 56 6/12=2 and 56/26=2 same 2 and 2 are getting
+def Friendly_pair(a,b):
+    sum1=0
+    sum2=0
+    for i in range(1,a+1):
+        if(a%i==0):
+            sum1+=i
+    print("sum1",sum1)
+    res1=sum1/a
+    print("res1",res1)
+    for j in range(1,b+1):
+        if(b%j==0):
+            sum2+=j
+    print("sum2",sum2)
+    res2=sum2/b
+    print("res2",res2)
+    if(res1==res2):
+        print("friendly Pair")
+    else:
+        print("Not a Friendly pair")
+# Friendly_pair(a,28)
+        #14)Write a Program to check whether the number is Neon Number or Not. 9(square)=81 -->8+1=9 9 is Neon number
+def Neon(a):
+    num=0
+    squre = a**2
+    while squre>0:
+        num+=squre%10
+        squre//=10
+    if(num==a):
+        print("Yes Its a Neon Number ",a,"=",num)
+    else:
+        print("Not a Neon Number")
+Neon(a)
+    
 
