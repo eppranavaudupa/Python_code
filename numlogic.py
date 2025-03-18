@@ -47,9 +47,9 @@ def Prime_factor(a):
 def perfect_square(a):
     for i in range(1,a):
         if(a==i*i):
-            print("Perfect squares are",i,"*",i)
-            return
-    print("Not a perfect square")
+            # print("Perfect squares are",i,"*",i)
+            return True
+    # print("Not a perfect square")
 # perfect_square(a)
 
     ##6)Aramstrong number 153=1cube+5cube+3cube
@@ -73,8 +73,9 @@ def aramstrong_num(a):
         total=total+num
         temp=temp//10
     if(total==a):
-        return "Given number is Aramstrong number:",total
-    return "Given number is not an Aramstrong number"
+        # return "Given number is Aramstrong number:",total
+        return True
+    # return "Given number is not an Aramstrong number"
 # print(aramstrong_num(a))
         #7)Strong number 
 def strong_Number(a):
@@ -86,9 +87,10 @@ def strong_Number(a):
         total=fact+total
         temp=temp//10
     if(a==total):
-        return("Given number is Strong number:",total)
-    else:
-        return("Not a Strong NUmber")
+        return True
+        # return("Given number is Strong number:",total)
+    # else:
+        # return("Not a Strong NUmber")
 # print(strong_Number(a))
       #8)Perfect number ex:6=2+3+1 number which is equal to sum of its divisor
 def perfect_num(a):
@@ -99,10 +101,11 @@ def perfect_num(a):
             num=i
             total=total+num
             if(total==a):
-                return("The given number is a Perfect Number",total)
+                # return("The given number is a Perfect Number",total)
+                return True
             
-        else:
-            return("Not a Perfect Number") 
+        # else:
+            # return("Not a Perfect Number") 
         # return total
 # print(perfect_num(a))  
         ##9)check whether a given number is a Harshad number or not.
@@ -115,9 +118,10 @@ def Harshad_num(a):
         total=total+num
         temp=temp//10
     if(a%total==0):
-        return("Given number is Harshad Number:",a,"%",total,"= 0")
-    else:
-        return"not a Harshad Number"
+        # return("Given number is Harshad Number:",a,"%",total,"= 0")
+        return True
+    # else:
+        # return"not a Harshad Number"
 # print(Harshad_num(a))
     #10) Write a program to check whether a given number is an Abundant number or not. 12=1+2+3+6 >16-->abundant
 def abundant_num(a):
@@ -128,21 +132,25 @@ def abundant_num(a):
         if(a%i==0):
             total=total+i
     if total > a :
-        print("Abundant Number",total,">",a)
+        # print("Abundant Number",total,">",a)
+        return True
     else:
-        print("Not Abundant Number")
+        return False
+        # print("Not Abundant Number")
 # abundant_num(a)
         #11) Write a program to check whether a given number is an Automorphic number or not.5square=25 last digit(5) = number(5)
 def Automorpic_num(a):
     num=counter(a)
     square=a*a
-    print("square",square)
+    # print("square",square)
     extract=square%(10**num)
-    print("extract",extract)
+    # print("extract",extract)
     if(extract==a):
-        print("Number is Automorpic:",extract,"=",a)
+        return True
+        # print("Number is Automorpic:",extract,"=",a)
     else:
-        print("Not automorpic")
+        return False
+        # print("Not automorpic")
 # Automorpic_num(a)
         ##12)Write a Program to check whether the number is Magic Number or Not
 magicNumber=1 
@@ -322,10 +330,9 @@ def reverse(i):
         rev=num+rev*10
         temp=temp//10
     if(i==rev):
-        return True
+         True
     else:
         return False
-print(reverse(121))
 def check_palindrome_range(a):
     for i in range(1,a+1):
         if(i<=10):
@@ -333,4 +340,57 @@ def check_palindrome_range(a):
         elif(reverse(i)==True):
             print(i,"is a Palindrome")
     print(b)
-check_palindrome_range(a)
+# check_palindrome_range(a)
+    #23)program to find out all primes numbers present within a given range
+def prime_num_range(a):
+        for i in range (2,a+1):
+         if(prime_num(i)==True):
+                print("Prime numbers are",i)
+        
+# prime_num_range(a)
+        #24)program to find out all perfect square numbers present within a given range
+def perfectSqr_range(a):
+    for i in range(1,a+1):
+        if(perfect_square(i)==True):
+            print("perfect squares are:",i)
+# perfectSqr_range(a)
+    #25) program to find out all Armstrong numbers present within a given range
+def ARAMSTRONG_RANGE(a):
+    for i in range(1,a+1):
+        if(aramstrong_num(i)==True):
+            print("Aram stong Numbers:",i)
+# ARAMSTRONG_RANGE(a)
+    #26)program to find out all Strong numbers present within a given range
+def STRONGNUM_RANGE(a):
+    for i in range(1,a+1):
+        if(strong_Number(i)==True):
+            print("Strong Number:",i)
+# STRONGNUM_RANGE(a)
+    #27)program to find out all Perfect numbers present within a given range.
+def PERFECTSQUARE_RANGE(a):
+    for i in range(1,a):
+        if(perfect_num(i)==True):
+            print("Perfect NUmbers:",i)
+# PERFECTSQUARE_RANGE(a)
+    #28)program to find out all Harshad numbers present within a given range
+def HARSHADNUMBERS_RANGE(a):
+    for i in range(1,a):
+        if(Harshad_num(i)==True):
+            print("Harshad Numbers:",i)
+# HARSHADNUMBERS_RANGE(a)
+        #29)program to find out all Abundant numbers present within a given range
+def ABUNDANTNUMBER_RANGE(a):
+    for i in range(1,a):
+        if(abundant_num(i)==True):
+            print("abundant Number:",i)
+# ABUNDANTNUMBER_RANGE(a)
+    #30)program to find out all Automorphic numbers present within a given range.
+def AUTOMORPIC_RANGE(a):
+    for i in range(1,a):
+        if(Automorpic_num(i)==True):
+            print("Automorpic Numbers:",i)
+AUTOMORPIC_RANGE(a)
+    
+
+
+
