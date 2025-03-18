@@ -196,6 +196,98 @@ def Neon(a):
         print("Yes Its a Neon Number ",a,"=",num)
     else:
         print("Not a Neon Number")
-Neon(a)
-    
+# Neon(a)
+        #15)Write a Program to check whether the number is Spy Number or Not 6=1+2+3=1*2*3
+def Spy_num(a):
+        
+        sum=0
+        mul=1
+        for i in range(1,(a//2)+1):
+            if(a%i==0):
+                num=i
+            # print("num",num)
+            sum=sum+num
+            mul=num*mul
+            # print(sum,"sum")
+            # print(mul,"mul")
+        if(sum==mul):
+            print("Spy Number",sum,"=",mul)
+        else:  
+            print("Not a Spy number")
+# Spy_num(a)
+
+        #16)Write a Program to check whether the number is Happy Number or Not.
+def summer(a):
+        temp=a
+        sqr=0
+        while temp>0:
+            num=temp%10
+            sqr+=num**2
+            temp=temp//10
+        return sqr   
+def happy_Num(a):
+    res=summer(a)
+    print("res ",res)
+    while res>=10:
+        res=summer(res)
+        print(res)
+
+    # return ans
+    if(res==1):
+        print("happy Number")
+        
+    else:
+        print("NOT")
+# happy_Num(a)
+    #17)Write a Program to check whether the number is Sunny Number or Not. 8 is a sunny number 8+1=9 ,9 is a perfect square
+def sunny_number(a):
+        num=a+1
+        for i in range(1,num):
+            
+            if(num == i*i):
+                print("Sunny number",a)
+                return
+        else:
+            print("NOT")
+# sunny_number(a)
+        #18)Write a Program to check whether the number is Disarium Number or Not 89=8(to power 1)+9(to the power 2)=89
+def Disarium(a):
+    count=counter(a)
+    temp=a
+    power=0
+    while temp>0:
+        num=temp%10
+        power=power+num**count
+        # print("power",power)
+        count=count-1
+        temp=temp//10
+    if(power==a):
+        print("its a disarium number",power,"=",a)
+    else:
+        print("Not a disarium number")
+# Disarium(a)
+    #19)Write a Program to check whether the number is a Pronic Number or Not. product of two consecutive numbers
+def pronic_number(a):
+    for i in range(1,a):
+        if(a%i==0):
+            num=i*(i+1)
+            if(num==a):
+                print(" It is a Pronic number",num,"=",a)
+                return
+            else:
+                print("Not a Pronic Number")
+# pronic_number(a)
+        #20)Write a Program to check whether the number is a Trimorphic Number or Not. A Trimorphic Number is a number whose cube ends in the same digits as the number itself.
+def trimorpic(a):
+    count=counter(a)
+    num=a**3
+    print("Cube of the Number",num)
+    extract=num%10**count
+    print("Extracted number",extract)
+    if(extract==a):
+        print("Its a Trimorpic number",a,"=",extract)
+    else:
+        print("not a trimorpic Number")
+# trimorpic(a)
+        #21)Program to check whether the number is an Evil Number or Not 
 
