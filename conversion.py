@@ -42,4 +42,40 @@ def oct_to_bin(n):
         a=a*100
         n=n//a
     print(ans)
-oct_to_bin(a)    
+# oct_to_bin(a)    
+## binary to Hexadecimal
+def bin_to_dec(n):
+    num=0
+    pow=0
+    while n:
+        a=(n%10)*(2**pow)
+        num=num+a
+        pow+=1
+        n//=10
+    return num
+# print(bin_to_dec(a))    
+
+def bin_to_Hexa(a):
+    temp=a
+    val=0
+    str=""
+    while temp > 0 :
+        num=temp%10000
+        val=bin_to_dec(num)
+        # print(val)
+        if val>=10:
+            asci=val+55
+            ans=chr(asci)
+        else:
+            ans=chr(val+48)
+            # print(ans)
+            
+        str=ans+str
+        temp=temp//10000
+    return("string",str)
+    # print("CHR",ans)
+    # str=str+ans
+    # print("string",str)
+
+    # return val
+print(bin_to_Hexa(a))
