@@ -162,12 +162,14 @@ def add(n):
         return sum
 def magic_Number(a):   
     b=add(a)
-    print(b)
+    # print(b)
     if(b>9 or b<9):
         res=add(b)
         if(res==magicNumber):
-            print(a,"It is a Magic Number")
+            return True
+            # print(a,"It is a Magic Number")
         else:
+            return False
             print("Not a Magic number") 
     # else:
     #     print("Not a Magic number")    
@@ -194,15 +196,17 @@ def Friendly_pair(a,b):
         print("Not a Friendly pair")
 # Friendly_pair(a,28)
         #14)Write a Program to check whether the number is Neon Number or Not. 9(square)=81 -->8+1=9 9 is Neon number
-def Neon(a):
+def Neon_num(a):
     num=0
     squre = a**2
     while squre>0:
         num+=squre%10
         squre//=10
     if(num==a):
-        print("Yes Its a Neon Number ",a,"=",num)
+        # print("Yes Its a Neon Number ",a,"=",num)
+        return True
     else:
+        return False
         print("Not a Neon Number")
 # Neon(a)
         #15)Write a Program to check whether the number is Spy Number or Not 6=1+2+3=1*2*3
@@ -219,8 +223,10 @@ def Spy_num(a):
             # print(sum,"sum")
             # print(mul,"mul")
         if(sum==mul):
+            return True
             print("Spy Number",sum,"=",mul)
         else:  
+            return False
             print("Not a Spy number")
 # Spy_num(a)
 
@@ -235,16 +241,18 @@ def summer(a):
         return sqr   
 def happy_Num(a):
     res=summer(a)
-    print("res ",res)
+    # print("res ",res)
     while res>=10:
         res=summer(res)
-        print(res)
+        # print(res)
 
     # return ans
     if(res==1):
-        print("happy Number")
+        # print("happy Number")
+        return True
         
     else:
+        return False
         print("NOT")
 # happy_Num(a)
     #17)Write a Program to check whether the number is Sunny Number or Not. 8 is a sunny number 8+1=9 ,9 is a perfect square
@@ -253,9 +261,10 @@ def sunny_number(a):
         for i in range(1,num):
             
             if(num == i*i):
+                return True
                 print("Sunny number",a)
-                return
         else:
+            return False
             print("NOT")
 # sunny_number(a)
         #18)Write a Program to check whether the number is Disarium Number or Not 89=8(to power 1)+9(to the power 2)=89
@@ -270,8 +279,10 @@ def Disarium(a):
         count=count-1
         temp=temp//10
     if(power==a):
+        return True
         print("its a disarium number",power,"=",a)
     else:
+        return False
         print("Not a disarium number")
 # Disarium(a)
     #19)Write a Program to check whether the number is a Pronic Number or Not. product of two consecutive numbers
@@ -280,9 +291,11 @@ def pronic_number(a):
         if(a%i==0):
             num=i*(i+1)
             if(num==a):
+                return True
                 print(" It is a Pronic number",num,"=",a)
                 return
             else:
+                return False
                 print("Not a Pronic Number")
 # pronic_number(a)
         #20)Write a Program to check whether the number is a Trimorphic Number or Not. A Trimorphic Number is a number whose cube ends in the same digits as the number itself.
@@ -389,8 +402,46 @@ def AUTOMORPIC_RANGE(a):
     for i in range(1,a):
         if(Automorpic_num(i)==True):
             print("Automorpic Numbers:",i)
-AUTOMORPIC_RANGE(a)
-    
-
-
-
+# AUTOMORPIC_RANGE(a)
+    #31)Program to Find out all Magic numbers present within a given range
+def MAGICNUM_RANGE(a):
+    for i in range(1,a):
+        if(magic_Number(i)==True):
+            print("Magic Number:",i)
+# MAGICNUM_RANGE(a)
+    #32)Program to Find out all Neon numbers present within a given range.
+def NEONNUM_RANGE(a):
+    for i in range(1,a):
+        if(Neon_num(i)==True):
+            print("Neon Numbers:",i)
+# NEONNUM_RANGE(a)
+    #33)Program to Find out all Spy numbers present within a given range.
+def SPYNUM_RANGE(a):
+    for i in range(1,a):
+        if(Spy_num(i)==True):
+            print("Spy numbers :",i)
+# SPYNUM_RANGE(a)
+        #34)a Program to Find out all Happy numbers present within a given
+def HAPPYNUM_RANGE(a):
+    for i in range(1,a):
+        if(happy_Num(i)==True):
+            print("happy numbers:",i)
+# HAPPYNUM_RANGE(a)
+        #35)Program to Find out all Sunny numbers present within a given range
+def SUNNYnum_RANGE(a):
+    for i in range(1,a):
+        if(sunny_number(i)==True):
+            print("sunny numbers:",i)
+# SUNNYnum_RANGE(a)
+    #36)Program to Find out all the Disarium numbers present within a given range.
+def DISARIUMnum_RANGE(a):
+    for i in range(1,a):
+        if(Disarium(i)==True):
+            print("Disarium numbers:",i)
+# DISARIUMnum_RANGE(a)
+    #37)Program to Find out all Pronic numbers present within a given range.
+def PRONICnum_RANGE(a):
+    for i in range(1,a):
+        if(pronic_number(i)==True):
+            print("Pronic NUmbers:",i)
+PRONICnum_RANGE(a)          
