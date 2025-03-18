@@ -1,4 +1,4 @@
-a = int(input("Enter the  numbers : "))
+a = str(input("Enter the  numbers : "))
 #decimal to bianry    
 def dec(n):
     num=0
@@ -78,4 +78,15 @@ def bin_to_Hexa(a):
     # print("string",str)
 
     # return val
-print(bin_to_Hexa(a))
+# print(bin_to_Hexa(a))
+    ##converting Hexadeciaml to binary
+def Hexa_to_bin(a):
+    res=0
+    ans=0
+    for i in range(len(a)):
+        asci=ord(a[i])
+        value=asci-55
+        res=dec_to_bin(value)
+        ans=res+ans *10000
+    print("RES",ans)
+Hexa_to_bin(a)

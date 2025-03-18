@@ -289,5 +289,48 @@ def trimorpic(a):
     else:
         print("not a trimorpic Number")
 # trimorpic(a)
-        #21)Program to check whether the number is an Evil Number or Not 
-
+        #21)Program to check whether the number is an Evil Number or Not = number of 1's in its binary is even -->evil number
+def Dec_to_bin(a):
+    num=0
+    n=1
+    while a:
+        num = a%2*n+num
+        n=n*10
+        a=a//2
+    return num
+Dec_to_bin(a)
+def evil_num(a):
+    num=Dec_to_bin(a)
+    count=0
+    while num:
+        extract=num%10
+        if(extract==1):
+            count+=1
+        num=num//10
+    if(count%2==0):
+        print("Given Number Is a Evil number","No of 1's","=",count)
+    else:
+        print("Not a Evil Number","No of 1's","=",count)
+# evil_num(a)
+        #22)program to find out all palindrome numbers present within a given range.
+def reverse(i):
+    rev=0
+    num=0
+    temp=i
+    while temp:
+        num=temp%10
+        rev=num+rev*10
+        temp=temp//10
+    if(i==rev):
+        return True
+    else:
+        return False
+print(reverse(121))
+def check_palindrome_range(a):
+    for i in range(1,a+1):
+        if(i<=10):
+            b="All single Digit numbers are palindrome"
+        elif(reverse(i)==True):
+            print(i,"is a Palindrome")
+    print(b)
+check_palindrome_range(a)
