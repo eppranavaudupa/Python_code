@@ -288,27 +288,28 @@ def Disarium(a):
     #19)Write a Program to check whether the number is a Pronic Number or Not. product of two consecutive numbers
 def pronic_number(a):
     for i in range(1,a):
-        if(a%i==0):
-            num=i*(i+1)
-            if(num==a):
-                return True
-                print(" It is a Pronic number",num,"=",a)
+       
+            if(a==i*(i+1)):
+                # return True
+                print(" It is a Pronic number")
                 return
             else:
-                return False
+                # return False
                 print("Not a Pronic Number")
 # pronic_number(a)
         #20)Write a Program to check whether the number is a Trimorphic Number or Not. A Trimorphic Number is a number whose cube ends in the same digits as the number itself.
 def trimorpic(a):
     count=counter(a)
     num=a**3
-    print("Cube of the Number",num)
+    # print("Cube of the Number",num)
     extract=num%10**count
-    print("Extracted number",extract)
+    # print("Extracted number",extract)
     if(extract==a):
+        return True
         print("Its a Trimorpic number",a,"=",extract)
     else:
-        print("not a trimorpic Number")
+        return False
+        # print("not a trimorpic Number")
 # trimorpic(a)
         #21)Program to check whether the number is an Evil Number or Not = number of 1's in its binary is even -->evil number
 def Dec_to_bin(a):
@@ -329,8 +330,10 @@ def evil_num(a):
             count+=1
         num=num//10
     if(count%2==0):
+        return True
         print("Given Number Is a Evil number","No of 1's","=",count)
     else:
+        return False
         print("Not a Evil Number","No of 1's","=",count)
 # evil_num(a)
         #22)program to find out all palindrome numbers present within a given range.
@@ -440,8 +443,27 @@ def DISARIUMnum_RANGE(a):
             print("Disarium numbers:",i)
 # DISARIUMnum_RANGE(a)
     #37)Program to Find out all Pronic numbers present within a given range.
+def pronic (a):
+    for i in range(1,a):
+
+        if((a==i*(i+1))):
+            return True
+            print("YES")
+pronic(a)
 def PRONICnum_RANGE(a):
     for i in range(1,a):
-        if(pronic_number(i)==True):
+        if(pronic(i)==True):
             print("Pronic NUmbers:",i)
-PRONICnum_RANGE(a)          
+# PRONICnum_RANGE(a)     
+        #38)Program to Find out all Trimorphic numbers present within a given range
+def TRImorpic_RANGE(a):
+    for i in range(1,a):
+        if(trimorpic(i)==True):
+            print("Trimorpic Numbers:",i)
+# TRImorpic_RANGE(a)
+    #39)Program to Find out all Evil numbers present within a given range.
+def EVILnum_RANGE(a):
+    for i in range(1,a):
+        if(evil_num(i)==True):
+            print("Evil numbers:",i)
+# EVILnum_RANGE(a)
