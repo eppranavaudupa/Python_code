@@ -467,3 +467,37 @@ def EVILnum_RANGE(a):
         if(evil_num(i)==True):
             print("Evil numbers:",i)
 # EVILnum_RANGE(a)
+    #40)program to find the Generic root of a number. 456=4+5+6=15-->1+5=6 6 is the generic root of the number
+def generic_root(a):
+    temp=a
+    sum=0
+    ans=0
+    num=0
+    while temp:
+        num=temp%10
+        sum=num+sum
+        temp=temp//10
+    if( sum>9):
+        ans=generic_root(sum)
+    print("ANS",ans)
+    return sum
+# print(generic_root(a))
+    #41)program to find out how many 1 and 0 in a given number.
+def countbits(a):
+    num=0
+    count=0
+    while a:
+        num=num+a%2
+        # print(num)
+        count+=1
+        a=a>>1
+    print(count)
+# countbits(a)
+    #42)program to add between 2 numbers without using arithmetic operators.
+def addition_withoutArithmaticOpr(a,b):
+    while b>0:
+        carry = a&b
+        a = a^b
+        b = carry<<1
+    return a
+print(addition_withoutArithmaticOpr(15,3))
