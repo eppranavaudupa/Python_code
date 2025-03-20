@@ -1,4 +1,4 @@
-n = int(input("Enter Number: "))
+# n = int(input("Enter Number: "))
 def prime_fact(a):
     for i in range(2,(a//2)):
         # print(i)
@@ -17,4 +17,17 @@ def factors(a):
             largest=n
     print("largest",largest)
     # print("largest",largest)
-factors(n)
+# factors(n)
+for i in range(11):
+    if i<6:
+        print(i,end="")
+    else:
+        print(10-i,end="")
+
+n=50
+for i in range(n):
+    if i<n/2:
+        print(i)
+
+    else:
+        print(n-i)
