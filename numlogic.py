@@ -500,4 +500,87 @@ def addition_withoutArithmaticOpr(a,b):
         a = a^b
         b = carry<<1
     return a
-print(addition_withoutArithmaticOpr(15,3))
+# print(addition_withoutArithmaticOpr(15,3))
+    #43)program to find the largest digit in a number
+def largestDig(a):
+    largest=0
+    while a:
+        num=a%10
+        if(largest < num):
+            largest=num
+        a=a//10
+    return largest
+# print(largestDig(a))
+    #44)program to find the smallest digit in a number.
+def smallestDig(a):
+    smallest=9
+    while a:
+        num=a%10
+        if(smallest>num ):
+            smallest=num
+        a=a//10
+    return smallest
+# print(smallestDig(a))
+        #45)a program to calculate Amicable pairs 220 and 284 -->divisors of sum of  220=284 and vice versa
+def amicable_Pairs(a,b):
+    sum=0
+    sum2=0
+    for i in range(1,a):
+        if(a%i==0):
+            sum=sum+i
+    print("SUM",sum)
+    print("b",b)
+    for i in range(1,b):
+        if(b%i==0):
+            sum2+=i
+    print("Sum2",sum2)
+    print("a",a)
+    if(sum == b and sum2 == a):
+        print("Amicable Pairs")
+        return
+    else:
+        print("Not ")
+# amicable_Pairs(66928, 66992)  
+    #46)a program to find the 2nd largest digit in a given number
+def second_largest(a):
+    first=0
+    second=0
+    while a>0:
+        n=a%10
+        if n>first:
+            second=first
+            first=n
+        elif n>second and n<first:
+            second=n
+        a//=10
+    return second
+# print(second_largest(a))
+    #47)program to find the 2nd smallest digit in a given number.
+def second_Smallest(a):
+    smallest=9
+    secSmallest=0
+    while a:
+        n=a%10
+        if n<smallest:
+            secSmallest=smallest
+            smallest=n
+        elif n<secSmallest and n<smallest:
+            secSmallest=n
+        a=a//10
+    print("Smallest",smallest)
+    print("Second Smallest",secSmallest)
+# second_Smallest(a)
+    #48)Write a program to find the number of odd and even digits in the given number
+def Odd_Even_Dig(a):
+    evenArr=[]
+    oddArr=[]
+    while a: 
+        num=a%10
+        if(num%2==0):
+            evenArr.append(num)
+        else:
+            oddArr.append(num)
+        a=a//10
+    print(evenArr)
+    print(oddArr)
+Odd_Even_Dig(a)           
