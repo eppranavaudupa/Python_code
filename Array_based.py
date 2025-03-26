@@ -76,8 +76,7 @@ def Odd_Even_Dig(n):
     print("Odd Elements",oddArr)
 # Odd_Even_Dig(n)
     #Reverse the Array
-def ReverseArr(n):
-    arr=User_input(n)
+def ReverseArr(arr):
     i=0
     j=len(arr)-1
     while i<=j:
@@ -86,7 +85,7 @@ def ReverseArr(n):
         arr[j]=t
         i+=1
         j-=1
-    print(arr)
+    return arr
 # ReverseArr(n)
     #[6,3,9,2,4,7]-->[2,4,7,6,3,9]
 def reverseKth(n):
@@ -182,10 +181,87 @@ def max_prod_Trip(n):
             print(thirdmax)
     product=[max*secmax*thirdmax]
     print(product)
+# max_prod_Trip(n)
+def lesserNumberFirst1(n):
+    x=7
+    b=[]
+    arr=User_input(n)
+    for i in range(n):
+        if(arr[i]<x):
+            b.append(arr[i])
+    for j in range(n):
+        if(arr[j]==x):
+            b.append(arr[j])
+        if(arr[j]>x):
+            b.append(arr[j])
+    print(b)
+# lesserNumberFirst1(n)
+def linearSearch(n):
+    k=5
+    arr=User_input(n)
+    for i in range(n-1,-1,-1):
+        if(arr[i]==k):
+            print(i)
+# linearSearch1(n)
+def linearSearch(n):
+    k=5
+    arr=User_input(n)
+    for i in range(n):
+        if(arr[i]==k):
+            print(i)
+# linearSearch1(n)
+    #Maximum consecutive one’s (or zeros) in a binary array
+def maxCount_0_1(n):
+    arr=User_input(n)
+    count=0
+    j=0
+    for i in range(1,len(arr)):
+        print(i)
+        if(arr[i]==arr[j]):
+            count+=1
+            j+=1
+        else:
+            j+=1
 
-max_prod_Trip(n)
-
-    
-
-
-    
+    print("count",count)
+# maxCount_0_1(n)
+        #Prefix sum
+# def prefix_sum(n):
+def left_sum():
+    arr=[10,4,8,3]
+    ls=[0]
+    rs=[0]
+    prefixSum=[]
+    sum=0
+    rsum=0
+    for i in range(len(arr)):
+        sum=sum+arr[i]
+        ls.append(sum)
+    print(ls)
+    for i in range(len(arr)-1,-1,-1):
+        rsum=rsum+arr[i]
+        rs.append(rsum)
+    rghtSum=ReverseArr(rs)
+    print(rghtSum)
+    for i in range(len(ls)):
+        prefixSum.append(abs(rghtSum[i]-ls[i]))
+        # return prefixSum
+    # prefixSum = [abs(rghtSum[i] - ls[i]) for i in range(len(ls))]
+    print(prefixSum,'prefixSum')
+# left_sum()
+        ##Binary Search
+def binarySearch(n):
+    arr=User_input(n)
+    key=6
+    low=0
+    high=len(arr)
+    mid=(low+high)//2
+    while low>=high:
+        if(arr[mid]==key):
+            return mid
+        elif(arr[mid]>key):
+            high=mid-1
+        elif(arr[mid]<key):
+            low=mid+1
+    print(mid)
+print(binarySearch(n))
