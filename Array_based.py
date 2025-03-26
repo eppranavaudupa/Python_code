@@ -1,4 +1,4 @@
-n=5
+n=int(input("Enter No of Array Elements:"))
 def User_input(n):
     arr=[]
     for i in range(n):
@@ -16,7 +16,6 @@ def replacePositions(n):
     print(n)
 # replacePositions(n)
 
-n=int(input("Enter No of Array Elements:"))
 def sumOfN(n):
     arr=[]
     for i in range(1,n+1):
@@ -90,26 +89,6 @@ def ReverseArr(n):
     print(arr)
 # ReverseArr(n)
     #[6,3,9,2,4,7]-->[2,4,7,6,3,9]
-def half_rever(n):
-    arr=User_input(n)
-    i=0
-    j=len(arr)-1
-    while i<j:
-        t=arr[i]
-        arr[i]=arr[j]
-        arr[j]=t
-        i=i+1
-        j=j-1
-    print("arr",arr)
-    arr2=arr
-    k=len(arr)//2-1
-    print("k",k)
-    for i in range(len(arr)//2):
-        temp=arr2[i]
-        arr2[i]=arr2[k]
-        arr2[k]=temp
-        print("arr2",arr2)
-# half_rever(n)
 def reverseKth(n):
     arr=User_input(n)
     k=int(input("Number of Times array should Rotate"))
@@ -120,7 +99,7 @@ def reverseKth(n):
         arr[0]=t
     print(arr)
 # reverseKth(n)
-def adder(n):
+def adderUsingSortFn(n):
     arr=User_input(n)
     arr2=User_input(n)
     sortedarr1=sorted(arr)
@@ -128,4 +107,85 @@ def adder(n):
     total=sortedarr1+sortedarr2
     totalsorted=sorted(total)
     print(totalsorted)
-adder(n)
+# adderUsingSortFn(n)
+    #second Largest element and Third Largest Element in an list
+def sec_ThirdLarge(n):
+    arr=User_input(n)
+    max=0
+    secLar=0
+    thirdLar=0
+    for i in range(len(arr) ):
+        if(arr[i]>max):
+            thirdLar=secLar
+            secLar=max
+            max=arr[i]
+        elif(secLar<arr[i] and arr[i]<max):
+            thirdLar=secLar
+            secLar=arr[i]
+        elif(thirdLar<arr[i] and arr[i]<secLar):
+            thirdLar=arr[i]
+    print(thirdLar,"thirdLar")
+    print (secLar)
+# sec_ThirdLarge(n)
+    #swaping-->3,7,9,2,5,4==>7,3,2,9,4,5
+def swaping(n):
+
+    arr=User_input(n)
+    i=0
+    j=1
+    temp=0
+    while i<n-1:
+        temp=arr[i]
+        arr[i]=arr[j]
+        arr[j]=temp
+        i=i+2
+        j=j+2
+    print(arr)
+# swaping(n)
+def swaping2(n):
+    arr=User_input(n)
+    for i in range(0,n-1,2):
+        t=arr[i]
+        arr[i]=arr[i+1]
+        arr[i+1]=t
+    print(arr)
+# swaping2(n)
+    #Even index First
+def evenind_Fir(n):
+    arr=User_input(n)
+    b=[]
+    j=0
+    for i in range(0,n,2):
+        b.append(arr[i])
+        j+=1
+    for i in range(1,n,2):
+        b.append(arr[i])
+        j+=1
+    print(b)
+# evenind_Fir(n)
+    ##maximum product of triplet in an array
+def max_prod_Trip(n):
+    arr=User_input(n)
+    max=0
+    secmax=0
+    thirdmax=0
+    for i in range(len(arr)):
+        if(max<arr[i]):
+            thirdmax=secmax
+            secmax=max
+            max=arr[i]
+        elif(secmax<arr[i] and arr[i]<max):
+            thirdmax=secmax
+            secmax=arr[i]
+        elif(thirdmax < arr[i] and arr[i] < secmax):
+            thirdmax=arr[i]
+            print(thirdmax)
+    product=[max*secmax*thirdmax]
+    print(product)
+
+max_prod_Trip(n)
+
+    
+
+
+    
