@@ -7,12 +7,11 @@ def palindrome(a):
     while temp>0:
         num=temp%10+num*10
         temp=temp//10
-    # print(num)
         
     if(num==a):
-        return(" yes it is a Palindrome")
+        return True
     else:
-        return("Not a Palindrome")
+        return False
 # print("checking palindrome : ",palindrome(a))
 
     #2)factorial
@@ -583,4 +582,74 @@ def Odd_Even_Dig(a):
         a=a//10
     print(evenArr)
     print(oddArr)
-Odd_Even_Dig(a)           
+# Odd_Even_Dig(a)      
+     #49)a program to check whether a given number is an ugly number.
+def ugly_Num(a):
+    for i in range(2,a):
+        if(a%i==0 and prime_num(i)==True):
+            num=i
+            if(num==2 or num==3 or num==5):
+                print("Ugly Num ")
+        
+# ugly_Num(a)
+    #50)program to classify Abundant, deficient and perfect number (integers) between 1 to 10,000.
+def classifyAB_DE_PER_NUM():
+    abundant=[]
+    perfect=[]
+    deficient=[]
+    for i in range(1,100):
+        if(abundant_num(i)==True):
+            abundant.append(i)
+        if(abundant_num(i)==False):
+            deficient.append(i)
+        if(perfect_num(i)==True):
+            perfect.append(i)
+    print("Abundant Number",abundant)
+    print("Perfect Number",perfect)
+    print("deficient Number",deficient)
+# classifyAB_DE_PER_NUM()
+    #51)program to generate random integers in a specific range.
+    #52)program to generate and show all Kaprekar numbers less than 1000.
+def kaprekar_num(a):
+    sqr=a**2
+    temp=0
+    temp=sqr
+    sum=0
+    while temp:
+        num=temp%10
+        print("num",num)
+        sum=sum+num
+        print("sum1",sum)
+        if(sum!=a):
+            num=temp%100
+            sum=sum+num
+            print("1st if",sum)
+        if(sum!=a):
+            num=temp%1000
+            sum=sum+num
+        temp=temp//10   
+    if(sum==a):
+        print(sum)
+    else:
+        print("NOT")
+# kaprekar_num(a)
+    #53)number of seed Lychrel number
+def reverse(num):
+    rev=0
+    while num > 0:
+        rev=num%10+rev*10
+        num=num//10
+    return rev
+def lychrel_Num(a):
+        
+        temp=a
+        for i in range(10):
+            rev=reverse(temp)
+            sum=temp+rev
+            if(palindrome(sum)==True):
+                return sum
+            temp=sum
+        return "Lynchrel Number"
+print(lychrel_Num(a))
+
+
