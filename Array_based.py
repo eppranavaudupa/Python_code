@@ -264,4 +264,80 @@ def binarySearch(n):
         elif(arr[mid]<key):
             low=mid+1
     print(mid)
-print(binarySearch(n))
+# print(binarySearch(n))
+def countConcecuteOne(n):
+    arr=User_input(n)
+    count=0
+    fc=0
+    for i in range(len(arr)):
+        if(arr[i]==1):
+            count+=1
+        else:
+            if(count>fc):
+                fc=count
+            count=0
+            if(count<fc):
+                fc=count
+    print(fc)
+# countConcecuteOne(n)
+def a(n):
+    arr=User_input(n)
+    count=0
+    maxCount=0
+    for i in range(n):
+        if(arr[i]==1):
+            count=count+1
+        
+        else:
+            maxCount=max(count,maxCount)
+            count=0
+    maxCount=max(count,maxCount)
+    return maxCount
+# print(a(n))
+        #1)
+class Solution:
+    def maxConsecutiveCount(self, arr):
+        #code here 
+        count=1
+        maxCount=0
+        for i in range(1,len(arr)):
+            if(arr[i]==arr[i-1]):
+                count+=1
+            else:
+                maxCount=max(maxCount,count)
+                count=1
+        maxCount=max(maxCount,count)
+        return maxCount
+    ##pushing 0's at last
+def pushing0(n):
+    arr=User_input(n)
+    j=len(arr)-1
+    i=0
+    while i<=j:
+        if(arr[i]==0):
+            temp=arr[j]
+            arr[j]=arr[i]
+            arr[i]=temp
+        j=j-1
+        i+=1
+    print(arr) 
+# pushing0(n)
+def pushingZero_Last(n):
+    arr=User_input(n)
+    j=0
+    i=0
+    while arr[j]!=0:
+        j+=0
+        print("1j",arr[j])
+        for i in range(j+1,len(arr)):
+            if(arr[i]!=0):
+                print("2j",arr[j],arr[i])
+                arr[j]=arr[i]
+                j+=1
+                print("+3",arr[j])
+        for i in range(j,len(arr)):
+            print("2nd For",arr[i])
+            arr[i]=0
+            print("2nd For 2nd element",i)
+    return arr
+print(pushingZero_Last(n))
