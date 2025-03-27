@@ -340,4 +340,32 @@ def pushingZero_Last(n):
             arr[i]=0
             print("2nd For 2nd element",i)
     return arr
-print(pushingZero_Last(n))
+# print(pushingZero_Last(n))
+    ##reverse Array in group
+def revArr_Grp(n):
+    arr=User_input(n)
+    k=int(input("Number Elements to rotate:"))
+    i=0
+    j=k-1
+    if(k>=n or k==1):
+        ReverseArr(arr)
+        return arr
+    else:
+        while j<=n-1:
+            temp=arr[i]
+            arr[i]=arr[j]
+            arr[j]=temp
+            j+=k
+            i+=k
+        return arr
+# print(revArr_Grp(n))
+        ##Selection Sorting
+def selection_Sort(n):
+    arr=User_input(n)
+    for i in range(0,len(arr),1):
+        for j in range(i+1,len(arr),1):
+            if(arr[i]>arr[j]):
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+print(selection_Sort(n))
+            
