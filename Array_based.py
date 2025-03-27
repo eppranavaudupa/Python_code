@@ -367,5 +367,43 @@ def selection_Sort(n):
             if(arr[i]>arr[j]):
                 arr[i],arr[j]=arr[j],arr[i]
     return arr
-print(selection_Sort(n))
-            
+# print(selection_Sort(n))
+def selectionSort2(n):
+    arr=User_input(n)
+    for i in range(len(arr),-1,-1):
+        for j in range(i-1,-1,-1):
+            if(arr[i]<arr[j]):
+                arr[i],arr[j]=arr[j],arr[i]
+    return arr
+# print(selectionSort2(n))
+    ##pakkada mane sorting
+def pakkaMane_Sort(n):
+    arr=User_input(n)
+    for i in range(n-1):
+        for j in range(n-1-i):
+            if(a[j]>a[j+1]):
+                a[j],a[j+1]=a[j+1],a[j]
+    return arr
+# print(pakkaMane_Sort(n))
+        ##sorting4
+def sorting4(n):
+    arr=User_input(n)
+    for i in range(n-1):
+        for j in range(n-1,i):
+            if(a[j]<a[j-1]):
+                a[j],a[j-1]=a[j-1],a[j]
+    return arr
+# print('sorting tech 4',sorting4(n))
+        ##PARTITION
+def partition(n):
+    arr=User_input(n)
+    j=0
+    for i in range(n):
+       if(arr[i]<arr[n-1]):
+        arr[i],arr[j]=arr[j],arr[i]
+        j+=1
+    if(arr[j]>arr[i]):
+        arr[j],arr[i]=arr[i],arr[j]
+    print (arr)
+    return j
+print(partition(n))         
